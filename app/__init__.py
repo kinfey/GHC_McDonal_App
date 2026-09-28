@@ -1,0 +1,2 @@
+"""Golden Order Copilot application."""
+

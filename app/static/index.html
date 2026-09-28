@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#da291c" />
+    <title>Golden Order Copilot</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Golden Order Copilot 首页">
+        <span class="arches">M</span>
+        <span>Golden Order <strong>Copilot</strong></span>
+      </a>
+      <div class="header-actions">
+        <label class="language-picker">
+          <span class="sr-only" data-i18n="languageLabel">语言</span>
+          <select id="language-select" aria-label="语言">
+            <option value="zh-CN">简体中文</option>
+            <option value="zh-TW">繁體中文</option>
+            <option value="en">English</option>
+          </select>
+        </label>
+        <span class="demo-pill" data-i18n="demoPill">非官方模拟体验</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">GPT-6-astra × GitHub Copilot SDK</span>
+          <h1><span data-i18n="heroTitle">今天想吃点</span><br /><em data-i18n="heroAccent">什么好料？</em></h1>
+          <p data-i18n="heroDescription">直接问 AI 菜单或优惠，也可以挑选餐点后核对明细、确认订单并发送 email。</p>
+          <button class="primary-button" id="hero-chat" type="button" data-i18n="chatNow">直接咨询 AI</button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <span class="food food-one">🍔</span>
+          <span class="food food-two">🍟</span>
+          <span class="food food-three">🥤</span>
+          <div class="sun"></div>
+        </div>
+      </section>
+
+      <section id="menu" class="menu-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow" data-i18n="popular">人气精选</span>
+            <h2 data-i18n="menuHeading">把快乐加入购物车</h2>
+          </div>
+          <div class="categories" id="categories"></div>
+        </div>
+        <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <button class="cart-fab" id="cart-fab" aria-label="打开 AI 点餐助手">
+      <span>AI</span><strong id="cart-count">0</strong>
+    </button>
+
+    <aside class="order-panel" id="order-panel" aria-label="AI 点餐助手">
+      <div class="panel-header">
+        <div>
+          <span class="online-dot"></span>
+          <strong data-i18n="assistantTitle">点餐 Copilot</strong>
+          <small data-i18n="assistantSubtitle">由 GPT-6-astra 提供支持 · 可直接聊天</small>
+        </div>
+        <button class="icon-button" id="close-panel" aria-label="关闭">×</button>
+      </div>
+      <div class="cart-summary" id="cart-summary"></div>
+      <div class="chat" id="chat">
+        <div class="message assistant" id="welcome-message"></div>
+      </div>
+      <div class="email-row">
+        <input id="customer-name" type="text" placeholder="称呼（下单必填）" data-i18n-placeholder="namePlaceholder" maxlength="80" />
+        <input id="email" type="email" placeholder="Email（选填）" data-i18n-placeholder="emailPlaceholder" />
+      </div>
+      <div class="quick-actions">
+        <button id="review-order" data-i18n="reviewOrder">请 AI 核对</button>
+        <button id="confirm-order" class="confirm" data-i18n="confirmOrder">确认下单</button>
+      </div>
+      <form id="chat-form" class="chat-form">
+        <input id="chat-input" placeholder="直接输入：今天有什么优惠券？" data-i18n-placeholder="chatPlaceholder" autocomplete="off" />
+        <button type="submit" aria-label="发送">➜</button>
+      </form>
+    </aside>
+
+    <div class="scrim" id="scrim"></div>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
