@@ -2,6 +2,8 @@
 
 [简体中文](README.zh.md)
 
+![mc](./imgs/mc.jpeg)
+
 Golden Order Copilot is an unofficial, McDonald's-inspired ordering demo built with the
 **GitHub Copilot Python SDK**, `gpt-6-astra`, custom tools, and the official McDonald's
 China MCP server.

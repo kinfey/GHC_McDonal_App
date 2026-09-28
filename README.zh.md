@@ -2,6 +2,8 @@
 
 [English](README.md)
 
+![mc](./imgs/mc.jpeg)
+
 Golden Order Copilot 是一个麦当劳风格的非官方模拟点餐应用，使用
 **GitHub Copilot Python SDK**、`gpt-6-astra`、自定义工具和麦当劳中国官方 MCP 服务。
 
